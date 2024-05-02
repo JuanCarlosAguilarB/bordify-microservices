@@ -1,0 +1,3 @@
+rootProject.name = 'bordify-microservices'
+
+include(':bordify-monolith') // Include the monolith project
