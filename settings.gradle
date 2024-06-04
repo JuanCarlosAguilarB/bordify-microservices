@@ -2,3 +2,4 @@ rootProject.name = 'bordify-microservices'
 
 include(':bordify-monolith') // Include the monolith project
 include(':discovery-server') // Include the server discovery
+include(':api-gateway') // Include the server discovery
