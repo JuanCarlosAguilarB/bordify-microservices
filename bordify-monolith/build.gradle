@@ -44,6 +44,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'ch.qos.logback:logback-classic'
 
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:4.1.2'
 
 }
 
