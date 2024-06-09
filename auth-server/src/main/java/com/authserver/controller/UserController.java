@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/auth")
 public class UserController {
 
     private final RegisterUserService registerUserService;
@@ -21,7 +21,7 @@ public class UserController {
     }
 
 
-    @PostMapping("/v1/user/")
+    @PostMapping("/v1/sing-up/")
     public ResponseEntity<ResponseApi> registerUser(@RequestBody UserRequest user){
 
         registerUserService.register(user);

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/login")
+@RequestMapping("/auth/v1/login")
 public class AuthController {
 
     private final GenerateTokenService generateTokenService;
@@ -22,7 +22,7 @@ public class AuthController {
     }
 
 
-    @PostMapping("/v1/")
+    @PostMapping("/")
     public ResponseEntity<Object> login(@RequestBody LoginRequest loginRequest){
 
 
