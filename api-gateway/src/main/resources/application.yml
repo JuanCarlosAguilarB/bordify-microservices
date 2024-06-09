@@ -1,15 +1,14 @@
 spring:
   application:
     name: "api-gateway"
-#  cloud:
-#    gateway:
-#      routes:
-#        - id: baeldung
-#          uri: baeldung.com
-#          predicates:
-#            - Path=/baeldung/
-#        - id: myOtherRouting
-#          uri: localhost:9999
+  cloud:
+    gateway:
+      routes:
+        - id: auth-server
+          uri: lb://auth-server
+          predicates:
+            - Path=/auth/**
+
 eureka:
   instance:
     instance-id: ${spring.application.name}:${random.uuid}
