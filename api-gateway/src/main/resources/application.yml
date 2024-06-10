@@ -8,7 +8,10 @@ spring:
           uri: lb://auth-server
           predicates:
             - Path=/auth/**
-
+        - id: user-server
+          uri: lb://user-server
+          predicates:
+            - Path=/users/**
 eureka:
   instance:
     instance-id: ${spring.application.name}:${random.uuid}
