@@ -1,11 +1,10 @@
-package com.bordify.models;
+package com.userserver.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import java.time.LocalTime;
 import java.util.UUID;
@@ -24,7 +23,6 @@ import java.util.UUID;
 @Data
 @Builder
 @Table(name = "\"user\"")
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
@@ -40,7 +38,7 @@ public class User {
      * Username of the user. This field must be unique.
      */
     @Column(unique = true)
-    private String username;
+    private String userName;
 
     /**
      * Password of the user.
