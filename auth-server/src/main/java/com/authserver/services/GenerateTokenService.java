@@ -1,20 +1,19 @@
 package com.authserver.services;
 
+import com.auth0.jwt.JWT;
 import com.authserver.dto.LoginRequest;
 import com.authserver.dto.TokenDto;
 import com.authserver.exception.LoginInvalidException;
 import com.authserver.exception.UserNotFoundException;
 import com.authserver.models.User;
 import com.authserver.repository.UserRepository;
-import io.jsonwebtoken.JwtBuilder;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.Date;
+import com.auth0.jwt.algorithms.Algorithm;
 
 @Service
 public class GenerateTokenService {
@@ -44,11 +43,11 @@ public class GenerateTokenService {
     }
 
     public String generateToken(String userName, int minutesToExpire) {
-        return Jwts.builder()
-                        .setSubject(userName)
-                        .setExpiration(new Date(System.currentTimeMillis() + (60000 * minutesToExpire)))
-                        .signWith(SignatureAlgorithm.HS256, secret)
-                        .compact();
+        Algorithm algorithm = Algorithm.HMAC256(secret);
+        return JWT.create()
+                .withSubject(userName)
+                .withExpiresAt(new Date(System.currentTimeMillis() + (60000 * minutesToExpire)))
+                .sign(algorithm);
     }
 
     public String generateAccessToken(String userName) {

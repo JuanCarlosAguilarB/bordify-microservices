@@ -33,12 +33,14 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-	implementation 'io.jsonwebtoken:jjwt:0.12.5'
 
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	runtimeOnly 'com.h2database:h2'
 	implementation 'org.postgresql:postgresql'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:4.1.2'
+
+	implementation 'com.auth0:java-jwt:4.4.0'
+
 }
 
 tasks.named('test') {
