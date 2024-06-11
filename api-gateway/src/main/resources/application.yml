@@ -17,3 +17,5 @@ eureka:
     instance-id: ${spring.application.name}:${random.uuid}
 
 
+jwt:
+  secret: 9eRKuaqG5XE5eZV0WzgPU47ba30VUpy0L8j9eRKuaqG5XE5eZV0WzgPU47ba30VUpy0L8j9eRKuaqG5XE5eZV0WzgPU47ba30VUpy0L8j

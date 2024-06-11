@@ -29,6 +29,11 @@ dependencies {
 
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:4.1.2'
+	implementation 'com.auth0:java-jwt:4.4.0'
+
+	annotationProcessor 'org.projectlombok:lombok:1.18.32'
+
+
 }
 
 dependencyManagement {
